@@ -1,0 +1,5 @@
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.csproj.AssemblyReference.cache
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.AssemblyInfoInputs.cache
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.AssemblyInfo.cs
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.csproj.CoreCompileInputs.cache
