@@ -3,3 +3,13 @@ C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6
 C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.AssemblyInfoInputs.cache
 C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.AssemblyInfo.cs
 C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.csproj.CoreCompileInputs.cache
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.exe
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.deps.json
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.runtimeconfig.json
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.dll
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.pdb
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.dll
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\refint\TempConvert.dll
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.pdb
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.genruntimeconfig.cache
+C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\ref\TempConvert.dll

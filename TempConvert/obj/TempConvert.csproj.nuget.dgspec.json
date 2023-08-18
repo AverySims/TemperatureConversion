@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert\\TempConvert.csproj": {}
+    "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert.csproj": {}
   },
   "projects": {
-    "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert\\TempConvert.csproj": {
+    "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert\\TempConvert.csproj",
+        "projectUniqueName": "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert.csproj",
         "projectName": "TempConvert",
-        "projectPath": "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert\\TempConvert.csproj",
+        "projectPath": "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert.csproj",
         "packagesPath": "C:\\Users\\as1109061\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\TempConvert\\obj\\",
+        "outputPath": "C:\\Users\\as1109061\\source\\repos\\TemperatureConversion\\TempConvert\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
