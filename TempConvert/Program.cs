@@ -8,23 +8,26 @@ namespace TempConvert
 		private static string[] convertType = { "Celsius to Fahrenheit", "Fahrenheit to Celsius", "Celsius to Kelvin", "Kelvin to Celsius", "Fahrenheit to Kelvin", "Kelvin to Fahrenheit" };
 
 		// user imput for selecting conversion method
-		private static int userVal = -1;
+		private static int convertSelectVal = -1;
 
 		// user input for starting temerature in conversion
-		private static double temperatureInputVal = -1.0;
+		private static double temperatureInputVal = 0.0;
 
-		private static bool shouldLoopSelection = true;
+		private static bool enableSelectionLoop = true;
 
-
-
+		// meant for running the program multiple times
+		private static bool enableMainLoop = true;
 		
 
 		static void Main(string[] args)
 		{
-			PrintConversionMethods();
+			while (enableMainLoop)
+			{
+				PrintConversionMethods();
 
-			SelectConversionMethod();
-
+				SelectConversionMethod();
+			}
+			
 		}
 
 		public static double FahrenheitToCelsius(double temperature)
@@ -40,41 +43,45 @@ namespace TempConvert
 			for (int i = 0; i < convertType.Length; i++)
 			{
 				// 1. Celsius to Fahrenheit
+				// 2. Fahrenheit to Celsius
 				// etc...
 				Console.WriteLine(i + 1 + ". " + convertType[i]);
-
 			}
 
 			// adding empty line after loop
+			// Writing "\n" causes a print of two lines, so stick with " " instead
 			Console.WriteLine(" ");
 		}
 
 		private static void SelectConversionMethod()
 		{
-			while (shouldLoopSelection)
+			// reset loop state before entering loop
+			enableSelectionLoop = true;
+
+			while (enableSelectionLoop)
 			{
 				// parsing the user input with error correction for invalid inputs
-				int.TryParse(Console.ReadLine(), out userVal);
+				ParseIntEC(out convertSelectVal);
 
-				if (DetermineSelectionValidity(userVal))
+				if (DetermineSelectionValidity(convertSelectVal))
 				{
-					Console.WriteLine("Selected: " + convertType[userVal - 1]);
-					shouldLoopSelection = false;
+					Console.WriteLine("\n" + "Selected: " + convertType[convertSelectVal - 1]);
+					enableSelectionLoop = false;
 				}
 				else
 				{
-					Console.WriteLine("Invalid selection, please select a listed conversion");
+					Console.WriteLine("\n" + "Invalid selection, please select a listed conversion method");
 				}
 			}
 
-			switch (userVal)
+			switch (convertSelectVal)
 			{
 				case 2:
-					Console.WriteLine("Please input your temperature:");
+					Console.WriteLine("\n" + "Please input your temperature:");
 
-					double.TryParse(Console.ReadLine(), out temperatureInputVal);
+					ParseDoubleEC(out temperatureInputVal);
 
-					Console.WriteLine("Fahrenheit: " + temperatureInputVal + " degrees"+ "\n" + "Celsius: " + FahrenheitToCelsius(temperatureInputVal) + " degrees");
+					Console.WriteLine("\n" + "Fahrenheit: " + temperatureInputVal + "°F" + "\n" + "Celsius: " + FahrenheitToCelsius(temperatureInputVal) + "°C");
 
 					break;
 			}
@@ -84,6 +91,17 @@ namespace TempConvert
 		private static bool DetermineSelectionValidity(int val)
 		{
 			return val > 0 && val <= convertType.Length;
+		}
+
+		// EC = Error correction
+		private static bool ParseIntEC(out int val)
+		{
+			return int.TryParse(Console.ReadLine(), out val);
+		}
+
+		private static bool ParseDoubleEC(out double val)
+		{
+			return double.TryParse(Console.ReadLine(), out val);
 		}
 
 	}
