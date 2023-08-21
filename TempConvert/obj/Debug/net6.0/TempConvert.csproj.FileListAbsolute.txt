@@ -13,3 +13,18 @@ C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6
 C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.pdb
 C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.genruntimeconfig.cache
 C:\Users\as1109061\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\ref\TempConvert.dll
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.exe
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.deps.json
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.runtimeconfig.json
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.dll
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\bin\Debug\net6.0\TempConvert.pdb
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.csproj.AssemblyReference.cache
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.GeneratedMSBuildEditorConfig.editorconfig
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.AssemblyInfoInputs.cache
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.AssemblyInfo.cs
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.csproj.CoreCompileInputs.cache
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.dll
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\refint\TempConvert.dll
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.pdb
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\TempConvert.genruntimeconfig.cache
+G:\VIsual Studio\source\repos\TemperatureConversion\TempConvert\obj\Debug\net6.0\ref\TempConvert.dll
