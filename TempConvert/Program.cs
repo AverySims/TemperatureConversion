@@ -31,7 +31,7 @@
 		// Fahrenheit
 		private static string FormatFahrenheit(double val)
 		{
-			return val + "°F";
+			return $"{val}°F";
 		}
 		private static string PrintFromFahrenheit(string val)
 		{
@@ -46,7 +46,7 @@
 		// Celsius
 		private static string FormatCelsius(double val)
 		{
-			return val + "°C";
+			return $"{val}°C";
 		}
 
 		private static string PrintFromCelsius(string val)
@@ -62,7 +62,7 @@
 		// Kelvin
 		private static string FormatKelvin(double val)
 		{
-			return val + " K";
+			return $"{val} K";
 		}
 
 		private static string PrintFromKelvin(string val)
@@ -130,7 +130,7 @@
 
 			for (int i = 0; i < convertType.Length; i++)
 			{
-				Console.WriteLine(i + 1 + ". " + convertType[i]);
+				Console.WriteLine($"{i + 1}. {convertType[i]}");
 				// 1. Celsius to Fahrenheit
 				// 2. Fahrenheit to Celsius
 				// etc...
