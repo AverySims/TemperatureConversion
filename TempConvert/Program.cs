@@ -13,13 +13,13 @@
 		// user input for setting program end behaviour
 		public static int endStateVal = -1;
 
-		private static bool enableMainLoop = true;
-		private static bool enableSelectionLoop = true;
-		private static bool enableEndingLoop = true;
+		private static bool loopMain = true;
+		private static bool loopConversionSelector = true;
+		private static bool loopEndingSelector = true;
 
 		static void Main(string[] args)
 		{
-			while (enableMainLoop)
+			while (loopMain)
 			{
 				PrintConversionMethods();
 				SelectConversionMethod();
@@ -141,9 +141,9 @@
 		private static void SelectConversionMethod()
 		{
 			// reset loop state before entering loop
-			enableSelectionLoop = true;
+			loopConversionSelector = true;
 
-			while (enableSelectionLoop)
+			while (loopConversionSelector)
 			{
 				// reading input with "TryParse" functions to prevent
 				// crashing when an unexpected variable type is used
@@ -153,7 +153,7 @@
 				if (DetermineSelectionValidity(convertSelectVal))
 				{
 					Console.WriteLine("Selected: " + convertType[convertSelectVal - 1]);
-					enableSelectionLoop = false;
+					loopConversionSelector = false;
 				}
 				else
 				{
@@ -204,25 +204,25 @@
 		private static void SelectEndingPath()
 		{
 			// reset loop state before entering loop
-			enableEndingLoop = true;
+			loopEndingSelector = true;
 			Console.WriteLine("Choose what happens next:");
 			PrintBlank();
 
 			Console.WriteLine("1. Convert new temperature");
 			Console.WriteLine("2. Quit program");
 
-			while (enableEndingLoop)
+			while (loopEndingSelector)
 			{
 				ParseIntEC(out endStateVal);
 				switch (endStateVal)
 				{
 					case 1:
-						enableEndingLoop = false;
+						loopEndingSelector = false;
 						break;
 
 					case 2:
-						enableEndingLoop = false;
-						enableMainLoop = false;
+						loopEndingSelector = false;
+						loopMain = false;
 						break;
 
 					default:
