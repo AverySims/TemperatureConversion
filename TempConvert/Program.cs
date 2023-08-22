@@ -27,6 +27,123 @@
 			}
 		}
 
+		private static void PrintConversionMethods()
+		{
+			// adding empty line before loop
+			Console.WriteLine("Select your conversion,");
+			SimpleConsoleFunctions.PrintBlank();
+
+			for (int i = 0; i < convertType.Length; i++)
+			{
+				Console.WriteLine($"{i + 1}. {convertType[i]}");
+				// 1. Celsius to Fahrenheit
+				// 2. Fahrenheit to Celsius
+				// etc...
+
+			}
+		}
+
+		private static void SelectConversionMethod()
+		{
+			// reset loop state before entering loop
+			loopConversionSelector = true;
+
+			while (loopConversionSelector)
+			{
+				// reading input with "TryParse" functions to prevent
+				// crashing when an unexpected variable type is used
+				SimpleConsoleFunctions.ParseIntEC(out convertSelectVal);
+				SimpleConsoleFunctions.PrintBlank();
+
+				if (DetermineSelectionValidity(convertSelectVal))
+				{
+					Console.WriteLine("Selected: " + convertType[convertSelectVal - 1]);
+					loopConversionSelector = false;
+				}
+				else
+				{
+					SimpleConsoleFunctions.PrintInvalidSelection();
+				}
+			}
+
+			Console.WriteLine("Please input your temperature:");
+
+			// reading user input before switch
+			SimpleConsoleFunctions.ParseDoubleEC(out temperatureInputVal);
+			SimpleConsoleFunctions.PrintBlank();
+
+			switch (convertSelectVal)
+			{
+				case 1: // Celsius to Fahrenheit
+					Console.WriteLine( PrintFromCelsius( FormatCelsius( temperatureInputVal ) ) );
+					Console.WriteLine( PrintToFahrenheit( FormatFahrenheit(CelsiusToFahrenheit( temperatureInputVal ) ) ) );
+					break;
+
+				case 2: // Fahrenheit to Celsius
+					Console.WriteLine( PrintFromFahrenheit( FormatFahrenheit( temperatureInputVal ) ) );
+					Console.WriteLine( PrintToCelsius( FormatCelsius( FahrenheitToCelsius( temperatureInputVal ) ) ) );
+					break;
+
+				case 3: // Celsius to Kelvin
+					Console.WriteLine( PrintFromCelsius( FormatCelsius( temperatureInputVal ) ) );
+					Console.WriteLine( PrintToKelvin( FormatKelvin( CelsiusToKelvin( temperatureInputVal ) ) ) );
+					break;
+
+				case 4: // Kelvin to Celsius
+					Console.WriteLine( PrintFromKelvin( FormatKelvin( temperatureInputVal ) ) );
+					Console.WriteLine( PrintToCelsius( FormatCelsius( KelvinToCelsius( temperatureInputVal ) ) ) );
+					break;
+
+				case 5: // Fahrenheit to Kelvin
+					Console.WriteLine( PrintFromFahrenheit( FormatFahrenheit( temperatureInputVal ) ) );
+					Console.WriteLine( PrintToKelvin( FormatKelvin( FahrenheitToKelvin( temperatureInputVal ) ) ) );
+					break;
+
+				case 6: // Kelvin to Fahrenheit
+					Console.WriteLine( PrintFromKelvin( FormatKelvin( temperatureInputVal ) ) );
+					Console.WriteLine( PrintToFahrenheit( FormatFahrenheit( KelvinToFahrenheit( temperatureInputVal ) ) ) );
+					break;
+			}
+		}
+
+		private static void SelectEndingPath()
+		{
+			// reset loop state before entering loop
+			loopEndingSelector = true;
+			Console.WriteLine("Choose what happens next:");
+			SimpleConsoleFunctions.PrintBlank();
+
+			Console.WriteLine("1. Convert new temperature");
+			Console.WriteLine("2. Quit program");
+
+			while (loopEndingSelector)
+			{
+				SimpleConsoleFunctions.ParseIntEC(out endStateVal);
+				switch (endStateVal)
+				{
+					case 1:
+						loopEndingSelector = false;
+						break;
+
+					case 2:
+						loopEndingSelector = false;
+						loopMain = false;
+						break;
+
+					default:
+						SimpleConsoleFunctions.PrintInvalidSelection();
+						break;
+				}
+			}
+			SimpleConsoleFunctions.PrintBlank();
+			return;
+		}
+
+		private static bool DetermineSelectionValidity(int val)
+		{
+			return val > 0 && val <= convertType.Length;
+		}
+
 		#region Formatting
 		// Fahrenheit
 		private static string FormatFahrenheit(double val)
@@ -109,145 +226,5 @@
 		}
 		#endregion
 		
-		#region Parsing
-		// EC = Error correction
-		private static bool ParseIntEC(out int val)
-		{
-			return int.TryParse(Console.ReadLine(), out val);
-		}
-
-		private static bool ParseDoubleEC(out double val)
-		{
-			return double.TryParse(Console.ReadLine(), out val);
-		}
-		#endregion
-		 
-
-		private static void PrintConversionMethods()
-		{
-			// adding empty line before loop
-			Console.WriteLine("Select your conversion,");
-			PrintBlank();
-
-			for (int i = 0; i < convertType.Length; i++)
-			{
-				Console.WriteLine($"{i + 1}. {convertType[i]}");
-				// 1. Celsius to Fahrenheit
-				// 2. Fahrenheit to Celsius
-				// etc...
-
-			}
-		}
-
-		private static void SelectConversionMethod()
-		{
-			// reset loop state before entering loop
-			loopConversionSelector = true;
-
-			while (loopConversionSelector)
-			{
-				// reading input with "TryParse" functions to prevent
-				// crashing when an unexpected variable type is used
-				ParseIntEC(out convertSelectVal);
-				PrintBlank();
-
-				if (DetermineSelectionValidity(convertSelectVal))
-				{
-					Console.WriteLine("Selected: " + convertType[convertSelectVal - 1]);
-					loopConversionSelector = false;
-				}
-				else
-				{
-					PrintInvalidSelection();
-				}
-			}
-
-			Console.WriteLine("Please input your temperature:");
-
-			// reading user input before switch
-			ParseDoubleEC(out temperatureInputVal);
-			PrintBlank();
-
-			switch (convertSelectVal)
-			{
-				case 1: // Celsius to Fahrenheit
-					Console.WriteLine( PrintFromCelsius( FormatCelsius( temperatureInputVal ) ) );
-					Console.WriteLine( PrintToFahrenheit( FormatFahrenheit(CelsiusToFahrenheit( temperatureInputVal ) ) ) );
-					break;
-
-				case 2: // Fahrenheit to Celsius
-					Console.WriteLine( PrintFromFahrenheit( FormatFahrenheit( temperatureInputVal ) ) );
-					Console.WriteLine( PrintToCelsius( FormatCelsius( FahrenheitToCelsius( temperatureInputVal ) ) ) );
-					break;
-
-				case 3: // Celsius to Kelvin
-					Console.WriteLine( PrintFromCelsius( FormatCelsius( temperatureInputVal ) ) );
-					Console.WriteLine( PrintToKelvin( FormatKelvin( CelsiusToKelvin( temperatureInputVal ) ) ) );
-					break;
-
-				case 4: // Kelvin to Celsius
-					Console.WriteLine( PrintFromKelvin( FormatKelvin( temperatureInputVal ) ) );
-					Console.WriteLine( PrintToCelsius( FormatCelsius( KelvinToCelsius( temperatureInputVal ) ) ) );
-					break;
-
-				case 5: // Fahrenheit to Kelvin
-					Console.WriteLine( PrintFromFahrenheit( FormatFahrenheit( temperatureInputVal ) ) );
-					Console.WriteLine( PrintToKelvin( FormatKelvin( FahrenheitToKelvin( temperatureInputVal ) ) ) );
-					break;
-
-				case 6: // Kelvin to Fahrenheit
-					Console.WriteLine( PrintFromKelvin( FormatKelvin( temperatureInputVal ) ) );
-					Console.WriteLine( PrintToFahrenheit( FormatFahrenheit( KelvinToFahrenheit( temperatureInputVal ) ) ) );
-					break;
-			}
-		}
-
-		private static void SelectEndingPath()
-		{
-			// reset loop state before entering loop
-			loopEndingSelector = true;
-			Console.WriteLine("Choose what happens next:");
-			PrintBlank();
-
-			Console.WriteLine("1. Convert new temperature");
-			Console.WriteLine("2. Quit program");
-
-			while (loopEndingSelector)
-			{
-				ParseIntEC(out endStateVal);
-				switch (endStateVal)
-				{
-					case 1:
-						loopEndingSelector = false;
-						break;
-
-					case 2:
-						loopEndingSelector = false;
-						loopMain = false;
-						break;
-
-					default:
-						PrintInvalidSelection();
-						break;
-				}
-			}
-			PrintBlank();
-			return;
-		}
-
-		private static bool DetermineSelectionValidity(int val)
-		{
-			return val > 0 && val <= convertType.Length;
-		}
-
-		private static void PrintBlank()
-		{
-			Console.WriteLine("");
-		}
-
-		private static void PrintInvalidSelection()
-		{
-			Console.WriteLine("Invalid selection, please select a listed option.");
-		}
 	}
 }
