@@ -108,7 +108,7 @@
 			return CelsiusToFahrenheit(KelvinToCelsius(temperature));
 		}
 		#endregion
-
+		
 		#region Parsing
 		// EC = Error correction
 		private static bool ParseIntEC(out int val)
@@ -121,6 +121,7 @@
 			return double.TryParse(Console.ReadLine(), out val);
 		}
 		#endregion
+		 
 
 		private static void PrintConversionMethods()
 		{
